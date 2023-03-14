@@ -8,13 +8,13 @@ namespace Portfolio.Api
         {
         }
 
-        public DbSet<Contact> contacts { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsetings.json")
+                .AddJsonFile("appsettings.json")
                 .Build();
 
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("ServerConnection"));
