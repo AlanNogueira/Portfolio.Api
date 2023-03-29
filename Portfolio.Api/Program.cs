@@ -88,6 +88,7 @@ app.MapPost("/contacts", async (PortfolioContext context, Contact contact) =>
 
     return Results.Ok(contact);
 })
+.RequireAuthorization()
 .WithOpenApi();
 
 app.MapGet("/contacts", async (PortfolioContext context) =>
